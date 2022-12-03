@@ -10,21 +10,21 @@ To run this project, first, create a local MySQL databse called "laravel" and ma
 
 Second, run the follwing commands to install the necessary tables:
 
-’’’
+'''
 composer install
 npm install
-’’’
+'''
 
 Third, you need to create the necessary DB tables for the project to work proeperly by running:
 
-’’’ php artisan migrate:fresh ’’’
+''' php artisan migrate:fresh '''
 
 And finally, run each of these commands in a seperate terminal:
 
-’’’
+'''
 npm run dev
 php artisan serve
-’’’
+'''
 
 TADAAA, you made it!
 If you have any question, you can contact me via my email address: alabaganne9@gmail.com
