@@ -28,5 +28,6 @@ If you have any question, you can contact me via my email address: alabaganne9@g
 
 ## Project screenshots
 ![Homepage](/screenshots/homepage.png)
+> Note: This project is fully responsive (works well no matter what screen size you have).
 ![Homepage for small devices](/screenshots/homepage-small-devices.png)
 ![Create Topic/Post page](/screenshots/create-post.png)
