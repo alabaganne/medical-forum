@@ -4,7 +4,7 @@ The idea of this project is to allow users to share and discuss information abou
 
 It is developped in a 24h Hackathon called "Nuit d'Info" (IT Night) with Laravel, and TailwindCSS.
 
-## How to run
+## How to run?
 
 To run this project, first, create a local MySQL databse called "laravel" and make sure the credentials are (username = "root", password = "").
 
@@ -24,6 +24,7 @@ php artisan serve
 ```
 
 TADAAA, you made it!
+
 If you have any question, you can contact me via my email address: alabaganne9@gmail.com
 
 ## Project screenshots
