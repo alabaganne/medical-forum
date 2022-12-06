@@ -1,47 +1,57 @@
 <x-app-layout>
     {{-- <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
+            {{ __('Home') }}
         </h2>
     </x-slot> --}}
 
-    <div class="py-10 mx-6">
+    <div class="py-12 mx-6">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 gap-6 grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4">
             <div class="hidden xl:block col-span-1 text-xs">
-                <div class="font-bold mb-4 ml-6 text-xs text-gray-800">Menu</div>
-                <a :href="route('dashboard')" class="mt-1 bg-blue-100 text-blue-500 px-4 py-4 font-bold flex items-center gap-2 rounded-md border-l-8 border-blue-500">
+                <div class="font-bold mb-4 ml-6 text-xs text-gray-800">MENU</div>
+                <a :href="route('home')" class="mt-1 bg-blue-100 text-blue-500 px-4 py-4 font-bold flex items-center gap-2 rounded-md border-l-8 border-blue-500">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
                     </svg>                                           
                     Posts
                 </a>
-                <a :href="route('profile.edit')" class="mt-1 px-4 py-4 font-bold flex items-center gap-2 rounded-md text-gray-500 hover:bg-gray-200">
+                <a href="#" class="mt-1 px-4 py-4 font-bold flex items-center gap-2 rounded-md text-gray-500 hover:bg-gray-200 border-l-8 border-transparent">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
-                    </svg>                                                                           
-                    Profile
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                    </svg>                                                                                             
+                    Contact Us
                 </a>
-                <form action="{{ route('logout') }}" method="POST">
-                    @csrf
-                    <a href="#" class="mt-1 px-4 py-4 font-bold flex items-center gap-2 rounded-md text-gray-500 hover:bg-gray-200"
-                        onclick="event.preventDefault(); this.closest('form').submit()"
-                    >
+                @auth
+                    <a :href="route('profile.edit')" class="mt-1 px-4 py-4 font-bold flex items-center gap-2 rounded-md text-gray-500 hover:bg-gray-200 border-l-8 border-transparent">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
-                        </svg>                                                                                                                  
-                        Log out
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>                                                                           
+                        Profile
                     </a>
-                </form>
+                    <form action="{{ route('logout') }}" method="POST">
+                        @csrf
+                        <a href="#" class="mt-1 px-4 py-4 font-bold flex items-center gap-2 rounded-md text-gray-500 hover:bg-gray-200 border-l-8 border-transparent"
+                            onclick="event.preventDefault(); this.closest('form').submit()"
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
+                            </svg>                                                                                                                  
+                            Log out
+                        </a>
+                    </form>
+                @endauth
             </div>
             <div class="lg:col-span-2">
-                <div class="flex justify-end lg:hidden">
-                    <a href="#" class="p-4 bg-blue-500 hover:bg-blue-600 text-white text-sm font-semibold flex items-center rounded shadow mb-6">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 mr-2">
-                            <path d="M2 4.25A2.25 2.25 0 014.25 2h2.5A2.25 2.25 0 019 4.25v2.5A2.25 2.25 0 016.75 9h-2.5A2.25 2.25 0 012 6.75v-2.5zM2 13.25A2.25 2.25 0 014.25 11h2.5A2.25 2.25 0 019 13.25v2.5A2.25 2.25 0 016.75 18h-2.5A2.25 2.25 0 012 15.75v-2.5zM11 4.25A2.25 2.25 0 0113.25 2h2.5A2.25 2.25 0 0118 4.25v2.5A2.25 2.25 0 0115.75 9h-2.5A2.25 2.25 0 0111 6.75v-2.5zM15.25 11.75a.75.75 0 00-1.5 0v2h-2a.75.75 0 000 1.5h2v2a.75.75 0 001.5 0v-2h2a.75.75 0 000-1.5h-2v-2z" />
-                        </svg>
-                        <span>Start a New Topic</span>
-                    </a>
-                </div>
+                @auth
+                    <div class="flex justify-end lg:hidden">
+                        <a href="#" class="p-4 bg-blue-500 hover:bg-blue-600 text-white text-sm font-semibold flex items-center rounded shadow mb-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 mr-2">
+                                <path d="M2 4.25A2.25 2.25 0 014.25 2h2.5A2.25 2.25 0 019 4.25v2.5A2.25 2.25 0 016.75 9h-2.5A2.25 2.25 0 012 6.75v-2.5zM2 13.25A2.25 2.25 0 014.25 11h2.5A2.25 2.25 0 019 13.25v2.5A2.25 2.25 0 016.75 18h-2.5A2.25 2.25 0 012 15.75v-2.5zM11 4.25A2.25 2.25 0 0113.25 2h2.5A2.25 2.25 0 0118 4.25v2.5A2.25 2.25 0 0115.75 9h-2.5A2.25 2.25 0 0111 6.75v-2.5zM15.25 11.75a.75.75 0 00-1.5 0v2h-2a.75.75 0 000 1.5h2v2a.75.75 0 001.5 0v-2h2a.75.75 0 000-1.5h-2v-2z" />
+                            </svg>
+                            <span>Create a New Post</span>
+                        </a>
+                    </div>
+                @endauth
                 @if (count($posts) == 0)
                     <p class="text-gray-500 text-sm font-semibold">No posts available!</p>
                 @endif
@@ -110,15 +120,17 @@
                 </div>
             </div>
             <div class="hidden lg:inline-block">
-                <div class="flex">
-                    <a href="{{ route('posts.create') }}" class="p-4 bg-blue-500 hover:bg-blue-600 text-white text-sm font-semibold flex items-center rounded shadow w-full justify-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 mr-2">
-                            <path d="M2 4.25A2.25 2.25 0 014.25 2h2.5A2.25 2.25 0 019 4.25v2.5A2.25 2.25 0 016.75 9h-2.5A2.25 2.25 0 012 6.75v-2.5zM2 13.25A2.25 2.25 0 014.25 11h2.5A2.25 2.25 0 019 13.25v2.5A2.25 2.25 0 016.75 18h-2.5A2.25 2.25 0 012 15.75v-2.5zM11 4.25A2.25 2.25 0 0113.25 2h2.5A2.25 2.25 0 0118 4.25v2.5A2.25 2.25 0 0115.75 9h-2.5A2.25 2.25 0 0111 6.75v-2.5zM15.25 11.75a.75.75 0 00-1.5 0v2h-2a.75.75 0 000 1.5h2v2a.75.75 0 001.5 0v-2h2a.75.75 0 000-1.5h-2v-2z" />
-                        </svg>
-                        <span>Create a New Post</span>
-                    </a>
-                </div>
-                <div class="mt-6 bg-white rounded shadow p-8 grid grid-cols-1 gap-4 text-sm font-medium">
+                @auth
+                    <div class="flex mb-6">
+                        <a href="{{ route('posts.create') }}" class="p-4 bg-blue-500 hover:bg-blue-600 text-white text-sm font-semibold flex items-center rounded shadow w-full justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 mr-2">
+                                <path d="M2 4.25A2.25 2.25 0 014.25 2h2.5A2.25 2.25 0 019 4.25v2.5A2.25 2.25 0 016.75 9h-2.5A2.25 2.25 0 012 6.75v-2.5zM2 13.25A2.25 2.25 0 014.25 11h2.5A2.25 2.25 0 019 13.25v2.5A2.25 2.25 0 016.75 18h-2.5A2.25 2.25 0 012 15.75v-2.5zM11 4.25A2.25 2.25 0 0113.25 2h2.5A2.25 2.25 0 0118 4.25v2.5A2.25 2.25 0 0115.75 9h-2.5A2.25 2.25 0 0111 6.75v-2.5zM15.25 11.75a.75.75 0 00-1.5 0v2h-2a.75.75 0 000 1.5h2v2a.75.75 0 001.5 0v-2h2a.75.75 0 000-1.5h-2v-2z" />
+                            </svg>
+                            <span>Create a New Post</span>
+                        </a>
+                    </div>
+                @endauth
+                <div class="bg-white rounded shadow p-8 grid grid-cols-1 gap-4 text-sm font-medium">
                     <div><a href="#" class="text-gray-400 hover:text-gray-500">Help</a></div>
                     <div><a href="#" class="text-gray-400 hover:text-gray-500">About</a></div>
                     <div><a href="#" class="text-gray-400 hover:text-gray-500">Topics</a></div>

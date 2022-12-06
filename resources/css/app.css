@@ -5,3 +5,7 @@
 body {
 	font-family: Poppins, sans-serif;
 }
+
+a {
+	@apply cursor-pointer;
+}

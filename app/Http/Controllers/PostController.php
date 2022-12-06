@@ -15,7 +15,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        return view('dashboard', [
+        return view('home', [
             'posts' => Post::all()
         ]);
     }
@@ -27,7 +27,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('topic.create');
+        return view('post.create');
     }
 
     /**
@@ -47,7 +47,7 @@ class PostController extends Controller
             'user_id' => $user_id
         ]);
 
-        return redirect('/dashboard');
+        return redirect('/');
     }
 
     /**
